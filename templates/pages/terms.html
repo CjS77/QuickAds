@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load static %}
+
+{% block title %}
+    {{title}}
+{% endblock title %}
+
+
+{% block breadcrumb %}
+    <li><a href="{% url 'products:home' %}">Home</a></li>
+    <li>{{title}}</li>
+{% endblock breadcrumb %}
+
+
+{% block content %}
+     <div class="terms main-grid-border">
+        <div class="container">
+            <h2 class="head">Terms of Use</h2>
+                <div class="panel-group" id="accordion">
+                <!-- First Panel -->
+                {% for term in all_terms %}
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             <h4 class="panel-title" data-toggle="collapse" data-target="#{{term.id}}">
+                                 <span>{{forloop.counter}}.</span> {{term.name}}
+                             </h4>
+                        </div>
+                        <div id="{{term.id}}" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>{{ term.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                {% endfor %}
+
+                </div>
+        </div>
+    </div>
+{% endblock content %}
