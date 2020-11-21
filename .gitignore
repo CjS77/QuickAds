@@ -8,6 +8,8 @@ db.sqlite3
 local_settings.py
 /static
 
+# Don't check in secrets!
+myproject/settings.py
 
 # Environments
 .env
