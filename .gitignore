@@ -4,12 +4,9 @@
 *.pyc
 __pycache__/
 .vscode
-db.sqlite3
+data/db.sqlite3
 local_settings.py
 /static
-
-# Don't check in secrets!
-myproject/settings.py
 
 # Environments
 .env
@@ -23,3 +20,4 @@ venv.bak/
 
 .idea
 *.iml
+media

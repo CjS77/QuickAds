@@ -8,13 +8,25 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'mysecret'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("QA_PRODUCTION", 0) == "0"
 
-ALLOWED_HOSTS = []
+if not DEBUG:
+    print("Running in PRODUCTION mode")
+    SECRET_KEY = os.environ["QA_SECRET"]
+    ALLOWED_HOSTS = os.environ.get("QA_ALLOWED_HOSTS").split(" ")
+    print("Allowed hosts: ", ALLOWED_HOSTS)
+    CSRF_COOKIE_SECURE = True
+    USE_X_FORWARDED_HOST = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SESSION_COOKIE_SECURE = True
+    X_FRAME_OPTIONS = "DENY"
+else:
+    print("Running in DEVELOPMENT mode")
+    SECRET_KEY = 'mysecret'
+    ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -74,7 +86,7 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'data/db.sqlite3'),
     }
 }
 
