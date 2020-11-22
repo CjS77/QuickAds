@@ -77,7 +77,8 @@ class CategoryProduct(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         category_slug = self.kwargs.get('slug')
-        context['title'] = f'{category_slug} Products'
+        category = get_object_or_404(Category, slug=category_slug)
+        context['title'] = f'Everything in {category.name}'
         return context
 
 
@@ -154,15 +155,16 @@ class SearchProduct(View):
         return render(request, 'ads/search_result.html', context)
 
 
-class ProductMonthArchiveView(generic.dates.MonthArchiveView):
+class ProductMonthArchiveView(generic.ListView):
     queryset = Product.active_objects.all()
-    template_name = 'ads/archive.html'
+    template_name = 'ads/ad_list.html'
+    context_object_name = 'ad_list'
     date_field = "created_at"
     allow_future = True
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Archive Ads'
         context['year'] = self.kwargs.get('year')
         context['month'] = self.kwargs.get('month')
+        context['title'] = f"Posted {context['month']} {context['year']}"
         return context

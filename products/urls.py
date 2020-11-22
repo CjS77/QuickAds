@@ -23,6 +23,6 @@ urlpatterns = [
     path('product/search/',
          views.SearchProduct.as_view(), name="search_product"),
 
-    path('ads/<int:year>/<int:month>/', views.ProductMonthArchiveView.as_view(month_format='%m'),
-         name="archive_month_ads"),
+    path('ads/<int:year>/<int:month>/',
+         views.ProductMonthArchiveView.as_view(), name="archive_month_ads"),
 ]
