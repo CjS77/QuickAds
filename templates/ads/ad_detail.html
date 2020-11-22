@@ -32,8 +32,6 @@
                             <img src="{{image.image.url}}" />
                         </li>
                     {% endfor %}
-
-
                 </ul>
             </div>
 
@@ -63,31 +61,18 @@
                 </div>
             </div>
             <div class="interested text-center">
-                <h4>Interested in this Ad?<small> Contact the Seller!</small></h4>
+                <h4>Interested in this Ad?</h4>
+                <p> Contact the Seller!</p>
                 <p><i class="glyphicon glyphicon-earphone"></i>{{product.owner.user_profile.phone_number}}</p>
             </div>
-                <div class="tips">
-                <h4>Safety Tips for Buyers</h4>
-                    <ol>
-                        <li><a href="javascript:void(0)">Contrary to popular belief.</a></li>
-                        <li><a href="javascript:void(0)">Contrary to popular belief.</a></li>
-                        <li><a href="javascript:void(0)">Contrary to popular belief.</a></li>
-                        <li><a href="javascript:void(0)">Contrary to popular belief.</a></li>
-                        <li><a href="javascript:void(0)">Contrary to popular belief.</a></li>
-                        <li><a href="javascript:void(0)">Contrary to popular belief.</a></li>
-                        <li><a href="javascript:void(0)">Contrary to popular belief.</a></li>
-                        <li><a href="javascript:void(0)">Contrary to popular belief.</a></li>
-                        <li><a href="javascript:void(0)">Contrary to popular belief.</a></li>
-                    </ol>
-                </div>
         </div>
 
         <div class="clearfix"></div>
     </div>
-
+    <hr />
     <div class="row">
         <div class="col-md-12 text-center">
-            <h3>Realted Products</h3>
+            <h3>Related Items</h3>
         </div>
         <hr>
         {% for ad in related_products %}

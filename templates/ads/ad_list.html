@@ -19,64 +19,6 @@
 {% block content %}
 <div class="ads-grid">
     <div class="side-bar col-md-3">
-        <!-- <div class="search-hotel">
-            <h3 class="sear-head">Name contains</h3>
-            <form>
-                <input type="text" value="Product name...">
-                <input type="submit" value=" ">
-            </form>
-        </div>
-
-        <div class="range">
-            <h3 class="sear-head">Price range</h3>
-            <ul class="dropdown-menu6">
-                <li>
-
-                    <div id="slider-range"></div>
-                    <input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
-                </li>
-            </ul>
-        </div> -->
-        <!--<div class="featured-ads">
-            <h2 class="sear-head fer">Featured Ads</h2>
-            <div class="featured-ad">
-                <a href="single.html">
-                    <div class="featured-ad-left">
-                        <img src="images/f1.jpg" title="ad image" alt="" />
-                    </div>
-                    <div class="featured-ad-right">
-                        <h4>Lorem Ipsum is simply dummy text of the printing industry</h4>
-                        <p>$ 450</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </div>
-            <div class="featured-ad">
-                <a href="single.html">
-                    <div class="featured-ad-left">
-                        <img src="images/f2.jpg" title="ad image" alt="" />
-                    </div>
-                    <div class="featured-ad-right">
-                        <h4>Lorem Ipsum is simply dummy text of the printing industry</h4>
-                        <p>$ 380</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </div>
-            <div class="featured-ad">
-                <a href="single.html">
-                    <div class="featured-ad-left">
-                        <img src="images/f3.jpg" title="ad image" alt="" />
-                    </div>
-                    <div class="featured-ad-right">
-                        <h4>Lorem Ipsum is simply dummy text of the printing industry</h4>
-                        <p>$ 560</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </div>
-            <div class="clearfix"></div>
-        </div> -->
         <div class="featured-ads">
             <h4 class="text-center">All Categories</h4>
             <ul class="list-group">
@@ -89,6 +31,9 @@
                 {% endfor %}
             </ul>
         </div>
+        {% if user.is_authenticated %}
+        <a class="cool-button big" href="{% url 'products:post_ad' %}">Post new ad</a>
+        {%  endif  %}
         <div class="featured-ads">
             <div>
                 <h3 class="text-center" style="margin-bottom:5px;">Archive Ads</h3>

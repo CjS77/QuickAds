@@ -1,27 +1,4 @@
 <footer>
-            <div class="footer-top">
-                <div class="container">
-                    <div class="foo-grids">
-                        <div class="col-md-4 col-md-offset-4 footer-grid">
-                            <h4 class="footer-head">Help</h4>
-                            <ul>
-                                <li><a target="_blank" href="{% url 'pages:how_it_works' %}">How it Works</a></li>
-                               <li><a target="_blank" href="{% url 'pages:faq' %}">FAQ</a></li>
-                                <li><a target="_blank" href="{% url 'pages:contact' %}">Contact</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 footer-grid">
-                            <h4 class="footer-head">Information</h4>
-                            <ul>
-                                <li><a href="{% url 'pages:terms' %}">Terms of Use</a></li>
-                                <li><a href="{% url 'pages:privacy' %}">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
             <div class="footer-bottom text-center">
             <div class="container">
                 <div class="footer-logo">
@@ -35,7 +12,10 @@
                     </ul>
                 </div>
                 <div class="copyrights">
-                    <p> ©  {% now "Y" %} QuickAds. All Rights Reserved | Design by  <a href="http://github.com/CjS77">CjS77</a></p>
+                    <p> ©  {% now "Y" %} QuickAds. All Rights Reserved |
+                        Design by  <a href="http://github.com/CjS77">CjS77</a> |
+                        <a href="{% url 'pages:terms' %}">Terms of Use</a>
+                    </p>
                 </div>
                 <div class="clearfix"></div>
             </div>
