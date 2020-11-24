@@ -46,7 +46,7 @@
             <div class="item-price">
                 <div class="product-price">
                     <p class="p-price">Price</p>
-                    <h3 class="rate">R {{product.price}}</h3>
+                    <h3 class="rate">R {{product.price|floatformat:"0"}}</h3>
                     <div class="clearfix"></div>
                 </div>
                 <div class="condition">
@@ -65,7 +65,7 @@
                 <p> Contact the Seller!</p>
                 <p><i class="glyphicon glyphicon-earphone"></i>{{product.owner.user_profile.phone_number}}</p>
                 <p><i class="fa fa-android"></i>
-                    <a href="intent://send?phone={{product.owner.user_profile.phone_number}}&text=Hi,%20{{product.owner.first_name}}. I'm interested in the {{ product.title }} for R{{ product.price }}.#Intent;package=com.whatsapp;scheme=whatsapp;end&phone={{ product.owner.user_profile.phone_number }}">WhatsApp me!</a>
+                    <a href="intent://send?phone={{product.owner.user_profile.phone_number}}&text=Hi,%20{{product.owner.first_name}}. I'm interested in the {{ product.title }} for R{{ product.price|floatformat:"0" }}.#Intent;package=com.whatsapp;scheme=whatsapp;end&phone={{ product.owner.user_profile.phone_number }}">WhatsApp me!</a>
                 </p>
             </div>
         </div>

@@ -2614,6 +2614,10 @@ h3.rate {
     vertical-align: middle;
 }
 
+.interested > p > a {
+    color: var(--secondaryTextColor);
+}
+
 .tips {
     margin: 20px;
     padding: 40px 20px 15px;
@@ -3200,6 +3204,7 @@ div#myTabContent {
     border: 1px solid #D1E0EE;
     padding: 0;
     width: 20%;
+    height:auto;
     background-color: #fff;
 }
 

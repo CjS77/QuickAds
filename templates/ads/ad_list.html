@@ -101,7 +101,7 @@
                                     {% endwith %}
                                     <section class="list-left">
                                         <h5 class="title">{{ad.title}}</h5>
-                                        <span class="adprice">R {{ad.price}}</span>
+                                        <span class="adprice">R {{ad.price|floatformat:"0"}}</span>
                                         <p class="catpath">{{ad.category.name}} » {{ad.brand}}</p>
                                     </section>
                                     <section class="list-right">
